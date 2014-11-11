@@ -82,7 +82,7 @@ var day = hour * 24;
 var week = day * 7;
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
-var loginUrl = 'https://www.topcoder.com/?action=showlogin';
+var loginUrl = 'https://www.topcoder.com/?action=showlogin&next=http://tcojudging.topcoder.com';
 
 app.use(function (req, res, next) {
     if (req.isAuthenticated()){
