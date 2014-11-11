@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row page-wrap" data-ng-show="Submission.team">
+        <div class="col-xs-12 col-md-10 col-md-offset-1" id="video-wrap">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" id="embed-youtube" src="" frameborder="0" allowfullscreen data-ng-show="videoProvider == 'youtube'"></iframe>
+                <iframe class="embed-responsive-item" id="embed-vimeo" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen data-ng-show="videoProvider == 'vimeo'"></iframe>
+                <div class="embed-responsive-item" id="embed-screencast" data-ng-show="videoProvider == 'screencast'"></div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-10 col-md-offset-1 align-center" data-ng-hide="showQuestions || !Submission">
+            <br>
+            <p>
+                <paper-button raised data-ng-click="skip()">
+                    <core-icon class="big" icon="cached"></core-icon> {{ User.eligibleForJudging ? 'Skip' : 'View Another' }}
+                </paper-button>
+                <paper-button raised class="colored" data-ng-click="review()" data-ng-show="User.eligibleForJudging">
+                    <core-icon class="big" icon="check-circle-outline"></core-icon> Review
+                </paper-button>
+            </p>
+        </div>
+        <div class="col-xs-12 col-md-6" data-ng-show="showQuestions" id="questions-wrap">
+            <div>
+                <section data-ng-repeat="Question in Questions">
+                    <p class="question-text">{{ Question }}</p>
+                    <paper-radio-group class="blue" data-ng-click="selectScores($index)" id="{{ 'question-' + $index }}">
+                        <paper-radio-button name="1" label="1"></paper-radio-button>
+                        <paper-radio-button name="2" label="2"></paper-radio-button>
+                        <paper-radio-button name="3" label="3"></paper-radio-button>
+                        <paper-radio-button name="4" label="4"></paper-radio-button>
+                    </paper-radio-group>
+                    <br/><br/><br/>
+                </section>
+                <div class="form-group">
+                    <label for="feedback-text">Feedback</label>
+                    <textarea id="feedback-text" class="form-control" rows="3" placeholder="Optional"></textarea>
+                </div>
+                <paper-button raised class="colored submit-review-btn" data-ng-click="submitReview()">
+                    <core-icon class="big" icon="check-circle-outline"></core-icon> Submit Review
+                </paper-button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<paper-toast id="toast-all-questions" text="Please select points for all the questions!"></paper-toast>
+<paper-toast id="toast-submit-error" text="Sorry, couldn't submit!"></paper-toast>
+<paper-toast id="toast-all-done" text="Thanks, you are all done!"></paper-toast>

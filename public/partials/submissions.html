@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row page-wrap">
+        <div class="row">
+            <div class="col-sm-5">
+                <paper-button raised class="colored submit-review-btn" data-ng-click="calculateScores()">
+                    <core-icon class="big" icon="check-circle-outline"></core-icon> Calculate Scores
+                </paper-button>
+            </div>
+            <div class="col-sm-2 hidden-xs align-center">
+                <span class="thanks-sub-text underline">Top 25</span>
+            </div>
+            <div class="col-sm-5 hidden-xs">
+                <paper-fab icon="add" class="blue pull-right" data-toggle="modal" data-target="#createModal"></paper-fab>
+            </div>
+        </div>
+        <br/>
+        <div class="align-center">
+            <table class="table table-hover">
+                <tr>
+                    <td>Team Number</td>
+                    <td>Video Link</td>
+                    <td>Total Score</td>
+                    <td>Number of Reviews</td>
+                    <td>Details</td>
+                </tr>
+                <tr data-ng-repeat="Submission in Submissions" class="table-data">
+                    <td>{{ Submission.team }}</td>
+                    <td><a data-ng-href="{{ Submission.video }}" target="_blank">{{ Submission.video }}</a></td>
+                    <td>{{ Submission.score | number : 2 }}</td>
+                    <td>{{ Submission.totalReviews }}</td>
+                    <td>
+                        <a href="#/submissions/{{ Submission.team }}">
+                            <paper-icon-button icon="arrow-forward"></paper-icon-button>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<paper-toast id="toast-loading" text="Calculating..."></paper-toast>
+<paper-toast id="toast-submit-error" text="Sorry, couldn't submit!"></paper-toast>
+<paper-toast id="toast-team-error" text="Team Number must be a number"></paper-toast>
+<paper-toast id="toast-video-error" text="Video must be from Youtube / Vimeo / Screencast.com"></paper-toast>
+<paper-toast id="toast-calculate-error" text="Sorry, couldn't calculate!"></paper-toast>
+
+<!-- Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add to Submissions</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="team-number">Team Number</label>
+                        <input type="number" class="form-control" id="team-number">
+                    </div>
+                    <div class="form-group">
+                        <label for="video-url">Video URL</label>
+                        <input type="text" class="form-control" id="video-url">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <paper-button raised class="colored submit-review-btn" data-ng-click="submitSubmission()">
+                    <core-icon class="big" icon="check-circle-outline"></core-icon> Submit
+                </paper-button>
+            </div>
+        </div>
+    </div>
+</div>

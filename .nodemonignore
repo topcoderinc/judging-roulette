@@ -1,0 +1,11 @@
+/node_modules/*
+/public/*
+/views/*
+/.build/*
+/tasks/*
+/test/*
+/.git/*
+/.gitignore
+/package.json
+/Profile
+/README.md

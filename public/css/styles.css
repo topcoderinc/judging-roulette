@@ -1,0 +1,133 @@
+body {
+    font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+    margin: 0;
+}
+
+.navbar-fixed-top{
+    background-color: #333333;
+    height: 60px;
+}
+
+.navbar-brand{
+    padding-top: 10px;
+}
+
+.profile-pic{
+    height: 30px;
+}
+
+.nav li a {
+    background-color: transparent;
+    color: #999;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.navbar-right li a{
+    text-transform: none;
+}
+
+.video-jumbo{
+    margin-top: 20px;
+}
+
+paper-button[raised] {
+    padding-top: 11px;
+}
+
+paper-button[raised].colored {
+    background: #4285f4;
+    color: #fff;
+}
+
+.center{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.align-center{
+    text-align: center !important;
+}
+
+.embed-responsive{
+    border-radius: 5px;
+}
+
+paper-radio-group.blue paper-radio-button::shadow #ink[checked] {
+    color: #4285f4;
+}
+
+paper-radio-group.blue paper-radio-button::shadow #onRadio {
+    background-color: #4285f4;
+}
+
+paper-radio-button {
+    display: block;
+}
+
+paper-radio-button {
+    display: inline-block !important;
+}
+
+.question-text{
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #4285f4;
+}
+
+#questions-wrap{
+    padding-left: 30px;
+}
+
+.page-wrap{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.left-align{
+    text-align: left;
+}
+
+.submit-review-btn{
+    margin-left: 0px;
+}
+
+.thanks-text, .thanks-sub-text{
+    margin-top: 10%;
+    color: #F59334;
+    font-size: 50px;
+    background-color: transparent;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.thanks-sub-text{
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.table-data > td {
+    padding-top: 20px !important;
+}
+
+.table-data > td:last-child {
+    padding-top: 10px !important;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 20px;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+paper-fab.blue {
+    background: #5677fc;
+}

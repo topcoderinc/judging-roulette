@@ -1,0 +1,29 @@
+{
+  "name": "Judging-Roulette",
+  "main": "public",
+  "version": "0.0.1",
+  "authors": [
+    "rjnpnigrhi@gmail.com"
+  ],
+  "description": "https://www.topcoder.com/challenge-details/30047028/",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "bootstrap": "*",
+    "angular": "*",
+    "angular-resource": "*",
+    "angular-route": "*",
+    "angular-cookies": "*",
+    "paper-elements": "Polymer/paper-elements#~0.4.2",
+    "javascript-route-matcher": "https://github.com/cowboy/javascript-route-matcher.git"
+  }
+}

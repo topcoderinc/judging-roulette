@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row page-wrap" data-ng-show="SubmissionDetails.video">
+        <div class="col-xs-12 col-md-10 col-md-offset-1 align-center">
+            <span class="thanks-sub-text underline">Team - {{ SubmissionDetails.team }}</span>
+            <br/><br/>
+        </div>
+        <div class="col-xs-12 col-md-6" id="video-wrap">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" id="embed-youtube" src="" frameborder="0" allowfullscreen data-ng-show="videoProvider == 'youtube'"></iframe>
+                <iframe class="embed-responsive-item" id="embed-vimeo" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen data-ng-show="videoProvider == 'vimeo'"></iframe>
+                <div class="embed-responsive-item" id="embed-screencast" data-ng-show="videoProvider == 'screencast'"></div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6" id="questions-wrap">
+            <div>
+                <table class="table table-hover">
+                    <tr>
+                        <td>Video</td>
+                        <td><a href="{{ SubmissionDetails.video }}" target="_blank">{{ SubmissionDetails.video }}</a></td>
+                    </tr>
+                    <tr>
+                        <td># of Reviews</td>
+                        <td>{{ SubmissionDetails.totalReviews }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Score</td>
+                        <td>{{ SubmissionDetails.score | number : 2 }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12 align-center" data-ng-show="SubmissionDetails.reviews.length > 0">
+            <br/><br/><br/>
+            <span class="thanks-sub-text underline">Reviews</span>
+            <br/><br/>
+            <table class="table table-hover">
+                <tr>
+                    <td>Reviewed By</td>
+                    <td data-ng-repeat="Score in SubmissionDetails.reviews[0].scores">Question - {{ $index + 1 }}</td>
+                    <td>Feedback</td>
+                    <td>Date</td>
+                </tr>
+                <tr data-ng-repeat="Review in SubmissionDetails.reviews">
+                    <td><a data-ng-href="https://www.topcoder.com/member-profile/{{ Review.handle }}" target="_blank">{{ Review.handle }}</a></td>
+                    <td data-ng-repeat="Score in Review.scores">{{ Score.score }}</td>
+                    <td>{{ Review.feedback }}</td>
+                    <td>{{ Review.date | date : 'mediumDate' }}&nbsp;&nbsp;{{ Review.date | date : 'mediumTime' }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-xs-12 col-md-10 col-md-offset-1 align-center">
+            <br/><br/>
+            <p>
+                <paper-button raised data-ng-click="back()">
+                    <core-icon class="big" icon="arrow-back"></core-icon> Back
+                </paper-button>
+            </p>
+        </div>
+    </div>
+</div>

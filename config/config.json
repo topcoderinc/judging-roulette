@@ -1,0 +1,16 @@
+{
+    "db": "mongodb://heroku_app31505046:3psrn6cagg2efpknb75cqm1i6i@ds053840-a0.mongolab.com:53840/heroku_app31505046",
+    "sessionSecret": "mycatdog",
+    "adminHandles": [
+        "jeffdonthemic",
+        "timhicks24",
+        "lazybaer",
+        "mess"
+    ],
+    "questions": [
+        "Extent to which the included deployment guide is well written and clearly articulates the steps necessary to deploy the system.",
+        "Does the solution implement all of the functionality stated in the requirements?",
+        "Overall quality of the submission."
+    ],
+    "randomCount": 5
+}
