@@ -1,6 +1,6 @@
 {
     "db": "mongodb://heroku_app31505046:3psrn6cagg2efpknb75cqm1i6i@ds053840-a0.mongolab.com:53840/heroku_app31505046",
-    "sessionSecret": "mycatdog",
+    "sessionSecret": "letthegamesbegin",
     "adminHandles": [
         "jeffdonthemic",
         "timhicks24",

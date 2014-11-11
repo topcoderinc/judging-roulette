@@ -103,11 +103,11 @@ app.use(function (req, res, next) {
             });
         })(req, res, next);
     } else {
-        //res.redirect(loginUrl);
+        res.redirect(loginUrl);
         /** TODO: To be removed */
-        var cookie = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3RvcGNvZGVyLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDExMTg1ODczMDE2NDUzMzY5OTI4NCIsImF1ZCI6IjZad1pFVW8yWks0YzUwYUxQcGd1cGVnNXYyRmZ4cDlQIiwiZXhwIjoxNzc1Mjk0NDY4LCJpYXQiOjE0MTUyOTQ0Njh9.XlOXp6L87QSyASxqEk0AHI6amW2qSGIfmKJLe_00irI';
-        res.cookie('tcjwt', cookie, { maxAge: week, httpOnly: true });
-        next();
+        // var cookie = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3RvcGNvZGVyLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDExMTg1ODczMDE2NDUzMzY5OTI4NCIsImF1ZCI6IjZad1pFVW8yWks0YzUwYUxQcGd1cGVnNXYyRmZ4cDlQIiwiZXhwIjoxNzc1Mjk0NDY4LCJpYXQiOjE0MTUyOTQ0Njh9.XlOXp6L87QSyASxqEk0AHI6amW2qSGIfmKJLe_00irI';
+        // res.cookie('tcjwt', cookie, { maxAge: week, httpOnly: true });
+        // next();
     }
 });
 
