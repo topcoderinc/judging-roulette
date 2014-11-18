@@ -9,7 +9,7 @@
     ],
     "questions": [
         "Extent to which the application creatively uses the selected APIs and cloud platform.",
-        "How functional and usable is the application?"
+        "How functional and usable is the application?",
         "Overall, how awesome and/or creative is the application?"
     ],
     "randomCount": 5
