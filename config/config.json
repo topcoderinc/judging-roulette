@@ -8,9 +8,9 @@
         "mess"
     ],
     "questions": [
-        "Extent to which the included deployment guide is well written and clearly articulates the steps necessary to deploy the system.",
-        "Does the solution implement all of the functionality stated in the requirements?",
-        "Overall quality of the submission."
+        "Extent to which the application creatively uses the selected APIs and cloud platform.",
+        "How functional and usable is the application?"
+        "Overall, how awesome and/or creative is the application?"
     ],
     "randomCount": 5
 }
