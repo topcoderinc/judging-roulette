@@ -37,7 +37,8 @@ var app = express();
 /**
  * Connect to MongoDB.
  */
-mongoose.connect(config.db);
+
+mongoose.connect(process.env.MONGOLAB_URI);
 mongoose.connection.on('error', function () {
     console.error('MongoDB Connection Error. Make sure MongoDB is running.');
 });
@@ -69,7 +70,7 @@ app.use(session({
     saveUninitialized: true,
     secret: config.sessionSecret,
     store: new MongoStore({
-        url: config.db,
+        url: process.env.MONGOLAB_URI,
         auto_reconnect: true
     })
 }));

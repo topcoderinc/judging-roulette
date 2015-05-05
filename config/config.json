@@ -1,11 +1,11 @@
 {
-    "db": "mongodb://heroku_app31505046:3psrn6cagg2efpknb75cqm1i6i@ds053840-a0.mongolab.com:53840/heroku_app31505046",
     "sessionSecret": "letthegamesbegin",
     "adminHandles": [
         "jeffdonthemic",
         "timhicks24",
         "lazybaer",
-        "mess"
+        "mess",
+        "nick.castillo"
     ],
     "questions": [
         "Extent to which the application creatively uses the selected APIs and cloud platform.",
