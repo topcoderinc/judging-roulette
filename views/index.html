@@ -52,7 +52,7 @@
         var Judging = $('#judging').val() == 'true' ? true : false;
     </script>
     <div data-ng-controller="mainController">
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -62,7 +62,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="/" class="navbar-brand">
-                        <img src="/img/tco14-logo.png" alt="TCO14" class="img-brand">
+                        <img src="/img/tco15hacks-logo.png" alt="TCO HACKS" class="img-brand" height="40">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse">
@@ -88,5 +88,12 @@
         <!-- AngularJS placeholder for partials/views -->
         <div data-ng-view></div>
     </div>
+    <footer>
+			<div class="footer-bottom">
+				<div class="container inner">
+						<p class="pull-right">Judging for {{eventTitle}}</p>
+				</div><!-- .container -->
+			</div><!-- .footer-bottom -->
+		</footer>
 </body>
 </html>

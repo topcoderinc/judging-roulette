@@ -18,6 +18,7 @@ exports.index = function (req, res) {
     }
     res.render('index', {
         title: 'Home | Judging Roulette',
+        eventTitle: process.env.EVENT,
         user: user,
         judging: isJudgingEnabled
     });
@@ -148,6 +149,7 @@ exports.submitReview = function(req, res){
             if (!err) {
                 return res.status(200).send({ success: result });
             } else {
+              console.log(err);
                 if (err.name == 'ValidationError') {
                     res.status(400).send({ error: err });
                 } else {
@@ -159,7 +161,7 @@ exports.submitReview = function(req, res){
 }
 
 exports.getSubmissions = function (req, res) {
-    Submission.find({})
+    Submission.find({event: process.env.EVENT})
         .sort({ score: -1 })
         .limit(25)
         .exec(function (err, submissions) {
@@ -237,8 +239,7 @@ exports.getSubmissionDetails = function(req, res){
     if(!req.params.id){
         return res.status(400).send({ error: 'Validation error!' });
     }
-
-    Submission.findOne({ team: req.params.id }, function(err, submission) {
+    Submission.findById(req.params.id, function(err, submission) {
         if (!err && submission) {
             return res.status(200).send({ success: submission });
         } else {

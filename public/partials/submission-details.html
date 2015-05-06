@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row page-wrap" data-ng-show="SubmissionDetails.video">
         <div class="col-xs-12 col-md-10 col-md-offset-1 align-center">
-            <span class="thanks-sub-text underline">Team - {{ SubmissionDetails.team }}</span>
+            <span class="thanks-sub-text underline">{{ SubmissionDetails.teamName }}</span>
             <br/><br/>
         </div>
         <div class="col-xs-12 col-md-6" id="video-wrap">
@@ -17,6 +17,10 @@
                     <tr>
                         <td>Video</td>
                         <td><a href="{{ SubmissionDetails.video }}" target="_blank">{{ SubmissionDetails.video }}</a></td>
+                    </tr>
+                    <tr>
+                        <td>Git Repo</td>
+                        <td><a href="{{ SubmissionDetails.repoUrl }}" target="_blank">{{ SubmissionDetails.repoUrl }}</a></td>
                     </tr>
                     <tr>
                         <td># of Reviews</td>

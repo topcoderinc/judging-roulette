@@ -2,7 +2,10 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 var Submission = new Schema({
-    team: { type: Number, unique: true },
+    event: { type: String, required: true},
+    team: { type: String, required: true },
+    teamName: { type: String, required: true},
+    repoUrl: { type: String, required: true},
     video: String,
     videoHtml: Schema.Types.Mixed,
     totalReviews: Number,
