@@ -83,7 +83,7 @@ exports.createSubmission = function (req, res) {
 exports.getSubmission = function (req, res) {
     var handle = req.user.id;
 
-    Submission.find({})
+    Submission.find({event: process.env.EVENT})
         .sort({ totalReviews: -1 })
         .exec(function (err, submissions) {
             if (!err) {
