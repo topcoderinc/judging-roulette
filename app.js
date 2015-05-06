@@ -104,20 +104,20 @@ app.use(function (req, res, next) {
             });
         })(req, res, next);
     } else {
-        // res.redirect(loginUrl);
+        res.redirect(loginUrl);
         /** TODO: To be removed */
-        var cookie = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3RvcGNvZGVyLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDExMTg1ODczMDE2NDUzMzY5OTI4NCIsImF1ZCI6IjZad1pFVW8yWks0YzUwYUxQcGd1cGVnNXYyRmZ4cDlQIiwiZXhwIjoxNzkwODU4MjQ2LCJpYXQiOjE0MzA4NTgyNDZ9.A3HeisoV92z70x1nXGQ7YhP_0qCuX3dSTA4jbhtF8wA';
-        res.cookie('tcjwt', cookie, { maxAge: week, httpOnly: true });
-        req.body.email = 'jdouglas@appirio.com';
-        req.body.password = ' ';
-        passport.authenticate('local', function (err, user, info) {
-            if (err) return next(err);
-            req.logIn(user, function (err) {
-                if (err) return next(err);
-                next();
-            });
-        })(req, res, next);
-        // end 
+        // var cookie = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3RvcGNvZGVyLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDExMTg1ODczMDE2NDUzMzY5OTI4NCIsImF1ZCI6IjZad1pFVW8yWks0YzUwYUxQcGd1cGVnNXYyRmZ4cDlQIiwiZXhwIjoxNzkwODU4MjQ2LCJpYXQiOjE0MzA4NTgyNDZ9.A3HeisoV92z70x1nXGQ7YhP_0qCuX3dSTA4jbhtF8wA';
+        // res.cookie('tcjwt', cookie, { maxAge: week, httpOnly: true });
+        // req.body.email = 'jdouglas@appirio.com';
+        // req.body.password = ' ';
+        // passport.authenticate('local', function (err, user, info) {
+        //     if (err) return next(err);
+        //     req.logIn(user, function (err) {
+        //         if (err) return next(err);
+        //         next();
+        //     });
+        // })(req, res, next);
+        // end
     }
 });
 
