@@ -178,7 +178,7 @@ exports.getSubmissions = function (req, res) {
 }
 
 exports.calculateScores = function (req, res) {
-    Submission.find({})
+    Submission.find({event: process.env.EVENT})
         .exec(function (err, submissions) {
             if (!err) {
                 if (submissions.length == 0) {
