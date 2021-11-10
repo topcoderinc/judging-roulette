@@ -47,10 +47,10 @@
     "passport-twitter": "^1.0.2",
     "q": "^1.0.1",
     "request": "^2.36.0",
-    "socket.io-client": "0.9.11",
+    "socket.io-client": "1.0.1",
     "swig": "^1.4.2",
     "twit": "^1.1.15",
-    "uglify-js": "^2.4.14",
+    "uglify-js": "^3.14.3",
     "validator": "^3.13.0",
     "yui": "^3.17.1"
   },
